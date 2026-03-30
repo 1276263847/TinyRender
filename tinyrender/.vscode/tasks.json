@@ -1,0 +1,48 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: g++.exe 生成活动文件",
+			"command": "D:/VS/msy64/ucrt64/bin/g++.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"${file}",
+				"-I", "E:/test/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include",  // 包含路径   头文件   编译的时候到这个路径下找头文件  编译审生成可重定位文件
+				"-L", "E:/test/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/x64/mingw/bin", // 库路径   动态链接库地址，可执行文件运行起来需要这些库提供的机器码
+				// "-l","libopencv_world4100",           // 链接需要使用这些dll作为可重定位文件
+				"-l","libopencv_calib3d452",
+				"-l","libopencv_photo452",
+				"-l","libopencv_core452",
+				"-l","libopencv_stitching452",
+				"-l","libopencv_dnn452",
+				"-l","libopencv_video452",
+				"-l","libopencv_features2d452",
+				"-l","libopencv_videoio452",
+				"-l","libopencv_flann452",
+				"-l","libopencv_gapi452",
+				"-l","libopencv_highgui452",
+				"-l","libopencv_imgcodecs452",
+				"-l","libopencv_imgproc452",
+				"-l","libopencv_ml452",
+				"-l","opencv_videoio_ffmpeg452_64",
+				"-l","libopencv_objdetect452",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe"      // fileDirname就是test.cpp所在文件夹的绝对路径
+			],
+
+			"options": {
+				"cwd": "D:/VS/msy64/ucrt64/bin"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "编译器: D:/VS/msy64/ucrt64/bin/g++.exe"
+		}
+	]
+}
